@@ -1,0 +1,40 @@
+{
+  "name": "image-transcription",
+  "version": "1.0.0",
+  "description": "Aplicación para transcribir texto de imágenes del portapapeles",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "install-python-deps": "pip install -r requirements.txt"
+  },
+  "dependencies": {
+    "tesseract.js": "^4.0.0"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "author": "Ivan Roig",
+  "license": "MIT",
+  "build": {
+    "appId": "com.example.image-transcription",
+    "productName": "Image Transcription",
+    "icon": "Iconshock-Dragonball.ico",
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "style.css",
+      "transcriber.py",
+      "preload.js",
+      "renderer.js",
+      "Iconshock-Dragonball.ico",
+      "node_modules/**/*"
+    ]
+  }
+}
